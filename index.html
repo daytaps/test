@@ -74,9 +74,12 @@
       background: rgba(0, 0, 0, 0.8);
       z-index: 1000;
     }
-    .rotate-45 {
-      transform: rotate(45deg);
-      transition: transform 0.3s;
+    .faq-item i {
+    transition: transform 0.3s ease;
+  }
+  .rotate-45 {
+    transform: rotate(45deg);
+  }
     }
   </style>
 </head>
@@ -518,11 +521,17 @@
       tokenomicsChart.resize();
     });
     document.querySelectorAll('.faq-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const content = item.querySelector('.faq-content');
-        const icon = item.querySelector('i');
-        content.classList.toggle('hidden');
-        icon.classList.toggle('rotate-45');
+    const header = item.querySelector('.flex.justify-between.items-center');
+    header.addEventListener('click', () => {
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('i');
+      content.classList.toggle('hidden');
+      icon.classList.toggle('rotate-45');
+
+    document.querySelectorAll('.faq-item').forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.querySelector('.faq-content').classList.add('hidden');
+          otherItem.querySelector('i').classList.remove('rotate-45');
       });
     });
     function openContactModal() {
