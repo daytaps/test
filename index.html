@@ -521,13 +521,8 @@
     item.addEventListener('click', () => {
       const content = item.querySelector('.faq-content');
       const icon = item.querySelector('i');
-      if (content.classList.contains('hidden')) {
-        content.classList.remove('hidden');
-        icon.classList.add('rotate-45');
-      } else {
-        content.classList.add('hidden');
-        icon.classList.remove('rotate-45');
-      }
+      content.classList.toggle('hidden');
+      icon.classList.toggle('rotate-45');
     });
   });
 
