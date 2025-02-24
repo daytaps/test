@@ -33,6 +33,8 @@
       }
     }
   </script>
+<head>
+  ...
   <style>
     .buy-yuni-button {
       border: 2px solid white; /* Adjust the border width as needed */
@@ -74,7 +76,13 @@
       background: rgba(0, 0, 0, 0.8);
       z-index: 1000;
     }
+    .rotate-45 {
+      transform: rotate(45deg);
+      transition: transform 0.3s;
+    }
   </style>
+  ...
+</head>  
 </head>
 <body class="overflow-x-hidden">
   <div class="star-field" id="starField"></div>
@@ -549,6 +557,14 @@
     if (event.target === document.getElementById('contactModal')) {
       closeContactModal();
     }
+  });
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('i');
+      content.classList.toggle('hidden');
+      icon.classList.toggle('rotate-45');
+    });
   });
 </script>
 </body>
