@@ -161,39 +161,39 @@
         </div>
       </div>
     </section>
-    <section id="tokenomics" class="py-20 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-4 gradient-text">Tokenomics</h2>
-          <p class="text-xl text-gray-300">Total Supply: 50 Billion YUNI</p>
+  <section id="tokenomics" class="py-20 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 gradient-text">Tokenomics</h2>
+      <p class="text-xl text-gray-300">Total Supply: 50 Billion YUNI</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div id="tokenomicsChart" class="h-[400px]"></div>
+      <div class="space-y-6">
+        <div class="glass-effect p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-2">Community & Growth</h3>
+          <p class="text-gray-300">40% (20B tokens)</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div id="tokenomicsChart" class="h-[400px]"></div>
-          <div class="space-y-6">
-            <div class="glass-effect p-6 rounded-lg">
-              <h3 class="text-xl font-bold mb-2">Community & Growth</h3>
-              <p class="text-gray-300">40% (20B tokens)</p>
-            </div>
-            <div class="glass-effect p-6 rounded-lg">
-              <h3 class="text-xl font-bold mb-2">Liquidity Pools</h3>
-              <p class="text-gray-300">25% (17.5B tokens)</p>
-            </div>
-            <div class="glass-effect p-6 rounded-lg">
-              <h3 class="text-xl font-bold mb-2">AI Development</h3>
-              <p class="text-gray-300">20% (10B tokens)</p>
-            </div>
-            <div class="glass-effect p-6 rounded-lg">
-              <h3 class="text-xl font-bold mb-2">Marketing</h3>
-              <p class="text-gray-300">10% (5B tokens)</p>
-            </div>
-            <div class="glass-effect p-6 rounded-lg">
-              <h3 class="text-xl font-bold mb-2">Team & Advisors</h3>
-              <p class="text-gray-300">5% (2.5B tokens)</p>
-            </div>
-          </div>
+        <div class="glass-effect p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-2">Liquidity Pools</h3>
+          <p class="text-gray-300">25% (17.5B tokens)</p>
+        </div>
+        <div class="glass-effect p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-2">AI Development</h3>
+          <p class="text-gray-300">20% (10B tokens)</p>
+        </div>
+        <div class="glass-effect p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-2">Marketing</h3>
+          <p class="text-gray-300">10% (5B tokens)</p>
+        </div>
+        <div class="glass-effect p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-2">Team & Advisors</h3>
+          <p class="text-gray-300">5% (2.5B tokens)</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
     <section id="utility" class="py-20 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -642,6 +642,34 @@
       });
     });
   });
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script>
+  const tokenomicsChart = echarts.init(document.getElementById('tokenomicsChart'));
+  const tokenomicsOption = {
+    animation: false,
+    series: [{
+      type: 'pie',
+      radius: ['40%', '70%'],
+      itemStyle: {
+        borderRadius: 10
+      },
+      label: {
+        show: true,
+        color: '#fff',
+        formatter: '{b}\n{c}%'
+      },
+      data: [
+        { value: 40, name: 'Community & Growth', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+        { value: 25, name: 'Liquidity Pools', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+        { value: 20, name: 'AI Development', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+        { value: 10, name: 'Marketing', itemStyle: { color: 'rgba(252, 141, 98, 1)' } },
+        { value: 5, name: 'Team & Advisors', itemStyle: { color: 'rgba(239, 133, 154, 1)' } }
+      ]
+    }],
+    backgroundColor: 'transparent'
+  };
+  tokenomicsChart.setOption(tokenomicsOption);
 </script>
 </body>
 </html>
