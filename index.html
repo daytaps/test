@@ -623,6 +623,24 @@
     }
   });
 </script>
+  <script>
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const header = item.querySelector('.flex.justify-between.items-center');
+    header.addEventListener('click', () => {
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('i');
+      content.classList.toggle('hidden');
+      icon.classList.toggle('rotate-45');
+
+      document.querySelectorAll('.faq-item').forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.querySelector('.faq-content').classList.add('hidden');
+          otherItem.querySelector('i').classList.remove('rotate-45');
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
 </body>
