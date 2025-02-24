@@ -428,109 +428,108 @@
   </section>
 
   <!-- Add Modal HTML Structure -->
-  <div id="contactModal" class="modal">
-    <div class="fixed inset-0 flex items-center justify-center p-4">
-      <div class="glass-effect p-8 rounded-lg max-w-md w-full">
-        <h3 class="text-2xl font-bold mb-4">Contract Address</h3>
-        <p class="text-gray-300 mb-6">0xa3081b64aa919b2bd01bd16c03921c20d4e9ff13</p>
-        <button onclick="copyToClipboard('0xa3081b64aa919b2bd01bd16c03921c20d4e9ff13')" class="!rounded-button bg-primary px-6 py-3 text-white font-medium hover:opacity-90 transition-opacity">Copy Address</button>
-        <button class="w-full !rounded-button border border-primary px-6 py-3 text-white font-medium hover:bg-primary/10 transition-colors" id="closeContactModalBtn">Close</button>
-      </div>
+  <!-- Add Modal HTML Structure -->
+<div id="contactModal" class="modal">
+  <div class="fixed inset-0 flex items-center justify-center p-4">
+    <div class="glass-effect p-8 rounded-lg max-w-md w-full">
+      <h3 class="text-2xl font-bold mb-4">Contact Address</h3>
+      <p class="text-gray-300 mb-6">0x1234567890abcdef1234567890abcdef12345678</p>
+      <button onclick="copyToClipboard('0x1234567890abcdef1234567890abcdef12345678')" class="!rounded-button bg-primary px-6 py-3 text-white font-medium hover:opacity-90 transition-opacity">Copy Address</button>
+      <button class="w-full !rounded-button border border-primary px-6 py-3 text-white font-medium hover:bg-primary/10 transition-colors" id="closeContactModalBtn">Close</button>
     </div>
   </div>
+</div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
-  <script>
-    const starField = document.getElementById('starField');
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    starField.appendChild(canvas);
-    const stars = [];
-    for(let i = 0; i < 200; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 2,
-        speed: Math.random() * 0.5
-      });
-    }
-    function animateStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = 'white';
-      stars.forEach(star => {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        ctx.fill();
-        star.y += star.speed;
-        if(star.y > canvas.height) {
-          star.y = 0;
-          star.x = Math.random() * canvas.width;
-        }
-      });
-      requestAnimationFrame(animateStars);
-    }
-    animateStars();
-    const tokenomicsChart = echarts.init(document.getElementById('tokenomicsChart'));
-    const tokenomicsOption = {
-      animation: false,
-      series: [{
-        type: 'pie',
-        radius: ['40%', '70%'],
-        itemStyle: {
-          borderRadius: 10
-        },
-        label: {
-          show: true,
-          color: '#fff',
-          formatter: '{b}\n{c}%'
-        },
-        data: [
-          { value: 40, name: 'Community', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
-          { value: 25, name: 'Liquidity', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
-          { value: 20, name: 'Development', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
-          { value: 10, name: 'Marketing', itemStyle: { color: 'rgba(252, 141, 98, 1)' } },
-          { value: 5, name: 'Team', itemStyle: { color: 'rgba(239, 133, 154, 1)' } }
-        ]
-      }],
-      backgroundColor: 'transparent'
-    };
-    tokenomicsChart.setOption(tokenomicsOption);
-    const downloadModal = document.getElementById('downloadModal');
-    const downloadBtn = document.getElementById('downloadBtn');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    downloadBtn.addEventListener('click', () => {
-      downloadModal.style.display = 'block';
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script>
+  const starField = document.getElementById('starField');
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  starField.appendChild(canvas);
+  const stars = [];
+  for (let i = 0; i < 200; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 2,
+      speed: Math.random() * 0.5
     });
-    closeModalBtn.addEventListener('click', () => {
-      downloadModal.style.display = 'none';
-    });
-    window.addEventListener('click', (e) => {
-      if (e.target === downloadModal) {
-        downloadModal.style.display = 'none';
+  }
+  function animateStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'white';
+    stars.forEach(star => {
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+      ctx.fill();
+      star.y += star.speed;
+      if (star.y > canvas.height) {
+        star.y = 0;
+        star.x = Math.random() * canvas.width;
       }
     });
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      tokenomicsChart.resize();
+    requestAnimationFrame(animateStars);
+  }
+  animateStars();
+  const tokenomicsChart = echarts.init(document.getElementById('tokenomicsChart'));
+  const tokenomicsOption = {
+    animation: false,
+    series: [{
+      type: 'pie',
+      radius: ['40%', '70%'],
+      itemStyle: {
+        borderRadius: 10
+      },
+      label: {
+        show: true,
+        color: '#fff',
+        formatter: '{b}\n{c}%'
+      },
+      data: [
+        { value: 40, name: 'Community', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+        { value: 25, name: 'Liquidity', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+        { value: 20, name: 'Development', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+        { value: 10, name: 'Marketing', itemStyle: { color: 'rgba(252, 141, 98, 1)' } },
+        { value: 5, name: 'Team', itemStyle: { color: 'rgba(239, 133, 154, 1)' } }
+      ]
+    }],
+    backgroundColor: 'transparent'
+  };
+  tokenomicsChart.setOption(tokenomicsOption);
+  const downloadModal = document.getElementById('downloadModal');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  downloadBtn.addEventListener('click', () => {
+    downloadModal.style.display = 'block';
+  });
+  closeModalBtn.addEventListener('click', () => {
+    downloadModal.style.display = 'none';
+  });
+  window.addEventListener('click', (e) => {
+    if (e.target === downloadModal) {
+      downloadModal.style.display = 'none';
+    }
+  });
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    tokenomicsChart.resize();
+  });
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('i');
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-45');
+      } else {
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-45');
+      }
     });
-    document.querySelectorAll('.faq-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const content = item.querySelector('.faq-content');
-        const icon = item.querySelector('i');
-        if (content.classList.contains('hidden')) {
-          content.classList.remove('hidden');
-          icon.classList.add('rotate-45');
-        } else {
-          content.classList.add('hidden');
-          icon.classList.remove('rotate-45');
-        }
-      });
-    });
-<script>
-  // Existing JavaScript code
+  });
 
   function openContactModal() {
     document.getElementById('contactModal').style.display = 'block';
@@ -557,39 +556,6 @@
     }
   });
 </script>
-    function openContactModal() {
-      document.getElementById('contactModal').style.display = 'block';
-    }
-
-    function closeContactModal() {
-      document.getElementById('contactModal').style.display = 'none';
-    }
-
-    document.getElementById('closeContactModalBtn').addEventListener('click', closeContactModal);
-
-    function copyToClipboard(text) {
-      navigator.clipboard.writeText(text).then(function() {
-        alert('Copied to clipboard');
-      }, function(err) {
-        console.error('Could not copy text: ', err);
-      });
-    }
-
-    window.addEventListener('click', function(event) {
-      <div id="contactModal" class="modal">
-  <div class="fixed inset-0 flex items-center justify-center p-4">
-    <div class="glass-effect p-8 rounded-lg max-w-md w-full">
-      <h3 class="text-2xl font-bold mb-4">Contact Address</h3>
-      <p class="text-gray-300 mb-6">0x1234567890abcdef1234567890abcdef12345678</p>
-      <button onclick="copyToClipboard('0x1234567890abcdef1234567890abcdef12345678')" class="!rounded-button bg-primary px-6 py-3 text-white font-medium hover:opacity-90 transition-opacity">Copy Address</button>
-      <button class="w-full !rounded-button border border-primary px-6 py-3 text-white font-medium hover:bg-primary/10 transition-colors" id="closeContactModalBtn">Close</button>
-    </div>
-  </div>
-</div>
-      if (event.target === document.getElementById('contactModal')) {
-        closeContactModal();
-      }
-    });
-  </script>
 </body>
 </html>
+ 
