@@ -1,284 +1,284 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YUNI AI - The Future of Meme Coins</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
-<script>
-tailwind.config = {
-theme: {
-extend: {
-colors: {
-primary: '#6366f1',
-secondary: '#0f172a'
-},
-borderRadius: {
-'none': '0px',
-'sm': '4px',
-DEFAULT: '8px',
-'md': '12px',
-'lg': '16px',
-'xl': '20px',
-'2xl': '24px',
-'3xl': '32px',
-'full': '9999px',
-'button': '8px'
-}
-}
-}
-}
-</script>
-<style>
-35| </script>
-36| <style>
-.buy-yuni-button {
-    border: 2px solid white; /* Adjust the border width as needed */
-}
-:where([class^="ri-"])::before { content: "\f3c2"; }
-body {
-font-family: 'Space Grotesk', sans-serif;
-background: linear-gradient(135deg, #0f172a 0%, #000000 100%);
-min-height: 100vh;
-color: #fff;
-}
-.glass-effect {
-background: rgba(255, 255, 255, 0.05);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 255, 255, 0.1);
-}
-.gradient-text {
-background: linear-gradient(45deg, #6366f1, #818cf8);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-}
-.star-field {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-pointer-events: none;
-z-index: 0;
-}
-.modal {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.8);
-z-index: 1000;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YUNI AI - The Future of Meme Coins</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366f1',
+            secondary: '#0f172a'
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .buy-yuni-button {
+      border: 2px solid white; /* Adjust the border width as needed */
+    }
+    :where([class^="ri-"])::before { content: "\f3c2"; }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #000000 100%);
+      min-height: 100vh;
+      color: #fff;
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .gradient-text {
+      background: linear-gradient(45deg, #6366f1, #818cf8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .star-field {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+    }
+  </style>
 </head>
 <body class="overflow-x-hidden">
-<div class="star-field" id="starField"></div>
-<header class="relative z-10">
-<nav class="glass-effect fixed w-full top-0 z-50">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between h-16 items-center">
-<div class="flex items-center">
+  <div class="star-field" id="starField"></div>
+  <header class="relative z-10">
+    <nav class="glass-effect fixed w-full top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <div class="flex items-center">
             <img src="https://raw.githubusercontent.com/daytaps/test/main/9.png" alt="Logo" class="h-12 w-auto mr-2">
             <strong class="text-white">YUNI</strong>
-</div>
-<div class="hidden md:flex space-x-8">
-    <a href="#vision" class="text-gray-300 hover:text-white transition-colors">Vision</a>
-    <a href="#tokenomics" class="text-gray-300 hover:text-white transition-colors">Tokenomics</a>
-    <a href="#utility" class="text-gray-300 hover:text-white transition-colors">Utility</a>
-    <a href="#roadmap" class="text-gray-300 hover:text-white transition-colors">Roadmap</a>
-    <a href="#whitepaper" class="text-gray-300 hover:text-white transition-colors">Whitepaper</a>
-    <a href="#faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a>
-    <a href="#social" class="text-gray-300 hover:text-white transition-colors">Community</a>
-    <a href="https://x.com/yuni_ai00?s=11" class="text-gray-300 hover:text-white transition-colors">
-      <i class="ri-twitter-fill text-2xl"></i>
-    </a>
-    <a href="https://t.me/Yuni_Ai00" class="text-gray-300 hover:text-white transition-colors">
-      <i class="ri-telegram-fill text-2xl"></i>
-    </a>
-  </div>
-<button class="!rounded-button bg-primary px-6 py-2 text-white font-medium hover:opacity-90 transition-opacity whitespace-nowrap"><strong>AN AI MEME</strong></button>
-</div>
-</div>
-</nav>
-</header>
-<main class="pt-20">
-<section class="relative min-h-screen flex items-center justify-center py-20">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="text-center">
-<h1 class="text-6xl font-bold mb-8 gradient-text">YUNI AI</h1>
-<p class="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">The First AI-Powered Meme Coin Ecosystem</p>
-<div class="flex justify-center gap-6">
-<button class="!rounded-button bg-primary px-8 py-3 text-white font-medium hover:opacity-90 transition-opacity whitespace-nowrap buy-yuni-button">Buy YUNI</button>
-<a href="https://www.dextools.io/app/en/bnb/pair-explorer/0x49a2a51f4b6baef7d8619864018db8b2434dd351?" class="!rounded-button bg-primary px-8 py-3 text-white font-medium hover:bg-primary/10 transition-colors whitespace-nowrap">View Chart</a></div>
-</div>
-</section>
-<section id="vision" class="py-20 relative">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-bold mb-4 gradient-text">Vision & Mission</h2>
-<p class="text-xl text-gray-300">Revolutionizing meme coins with AI-driven utility</p>
-</div>
-<div class="grid md:grid-cols-2 gap-8">
-<div class="glass-effect p-8 rounded-lg">
-<h3 class="text-2xl font-bold mb-4">Vision</h3>
-<p class="text-gray-300">Revolutionize meme coins by embedding AI-driven utility into a playful, community-centric ecosystem.We aim to build a robust ecosystem
-where users can engage, earn, and benefit from
-advanced technology while enjoying the playful
-spirit of meme culture.</p>
-</div>
-<div class="glass-effect p-8 rounded-lg">
-<h3 class="text-2xl font-bold mb-4">Mission</h3>
-<ul class="space-y-4 text-gray-300">
-<li class="flex items-start">
-<i class="ri-check-line text-primary mr-2 mt-1"></i>
-<span>Merge AI innovation with meme culture</span>
-</li>
-<li class="flex items-start">
-<i class="ri-check-line text-primary mr-2 mt-1"></i>
-<span>Empower holders through rewards, staking, and governance</span>
-</li>
-<li class="flex items-start">
-<i class="ri-check-line text-primary mr-2 mt-1"></i>
-<span>Deliver tools like market analytics, content generation, and NFTs</span>
-</li>
-<li class="flex items-start">
-<i class="ri-check-line text-primary mr-2 mt-1"></i>
-<span>Foster decentralized decision-making via community voting</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="tokenomics" class="py-20 relative">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-bold mb-4 gradient-text">Tokenomics</h2>
-<p class="text-xl text-gray-300">Total Supply: 50 Billion YUNI</p>
-</div>
-<div class="grid md:grid-cols-2 gap-12 items-center">
-<div id="tokenomicsChart" class="h-[400px]"></div>
-<div class="space-y-6">
-<div class="glass-effect p-6 rounded-lg">
-<h3 class="text-xl font-bold mb-2">Community & Growth</h3>
-<p class="text-gray-300">40% (20B tokens)</p>
-</div>
-<div class="glass-effect p-6 rounded-lg">
-<h3 class="text-xl font-bold mb-2">Liquidity Pools</h3>
-<p class="text-gray-300">25% (17.5B tokens)</p>
-</div>
-<div class="glass-effect p-6 rounded-lg">
-<h3 class="text-xl font-bold mb-2">AI Development</h3>
-<p class="text-gray-300">20% (10B tokens)</p>
-</div>
-<div class="glass-effect p-6 rounded-lg">
-<h3 class="text-xl font-bold mb-2">Marketing</h3>
-<p class="text-gray-300">10% (5B tokens)</p>
-</div>
-<div class="glass-effect p-6 rounded-lg">
-<h3 class="text-xl font-bold mb-2">Team & Advisors</h3>
-<p class="text-gray-300">5% (2.5B tokens)</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="utility" class="py-20 relative">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-bold mb-4 gradient-text">Utility & Use Cases</h2>
-<p class="text-xl text-gray-300">Comprehensive AI-powered ecosystem features</p>
-</div>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="glass-effect p-8 rounded-lg transform hover:scale-105 transition-transform">
-<div class="w-12 h-12 flex items-center justify-center mb-4">
-<i class="ri-line-chart-line text-primary text-3xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-4">AI-Powered Analytics</h3>
-<p class="text-gray-300">Advanced market trend analysis and prediction tools</p>
-</div>
-<div class="glass-effect p-8 rounded-lg transform hover:scale-105 transition-transform">
-<div class="w-12 h-12 flex items-center justify-center mb-4">
-<i class="ri-image-line text-primary text-3xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-4">Meme Generator</h3>
-<p class="text-gray-300">Create and earn rewards with AI-powered meme creation</p>
-</div>
-<div class="glass-effect p-8 rounded-lg transform hover:scale-105 transition-transform">
-<div class="w-12 h-12 flex items-center justify-center mb-4">
-<i class="ri-coins-line text-primary text-3xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-4">Staking Rewards</h3>
-<p class="text-gray-300">Earn passive income through tiered staking programs</p>
-</div>
-<div class="glass-effect p-8 rounded-lg transform hover:scale-105 transition-transform">
-<div class="w-12 h-12 flex items-center justify-center mb-4">
-<i class="ri-nft-line text-primary text-3xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-4">NFT Integration</h3>
-<p class="text-gray-300">AI-generated collectibles and NFT staking platform</p>
-</div>
-<div class="glass-effect p-8 rounded-lg transform hover:scale-105 transition-transform">
-<div class="w-12 h-12 flex items-center justify-center mb-4">
-<i class="ri-exchange-line text-primary text-3xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-4">Cross-Chain Swaps</h3>
-<p class="text-gray-300">Seamless token swaps across multiple blockchains</p>
-</div>
-<div class="glass-effect p-8 rounded-lg transform hover:scale-105 transition-transform">
-<div class="w-12 h-12 flex items-center justify-center mb-4">
-<i class="ri-group-line text-primary text-3xl"></i>
-</div>
-<h3 class="text-xl font-bold mb-4">YUNI DAO</h3>
-<p class="text-gray-300">Community governance and decision-making platform</p>
-</div>
-</div>
-</div>
-</section>
-<section id="roadmap" class="py-20 relative">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-bold mb-4 gradient-text">Roadmap</h2>
-<p class="text-xl text-gray-300">Our journey to revolutionize meme coins</p>
-</div>
-<div class="space-y-12">
-<div class="glass-effect p-8 rounded-lg">
-<h3 class="text-2xl font-bold mb-4">Phase 1 - Foundation</h3>
-<ul class="space-y-4 text-gray-300">
-<li class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
-<span>Launch on BSC</span>
-</li>
-<li class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
-<span>Community airdrops</span>
-</li>
-<li class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
-<span>Liquidity setup</span>
-</li>
-<li class="flex items-start">
-<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
-<span>Social media campaigns</span>
-</li>
-</ul>
-</div>
-<div class="glass-effect p-8 rounded-lg">
-<h3 class="text-2xl font-bold mb-4">Phase 2 - Development</h3>
-<ul class="space-y-4 text-gray-300">
-<li class="flex items-start">
-<i class="ri-time-line text-primary mr-2 mt-1"></i>
-<span>AI analytics platform launch</span>
-</li>
-<li class="flex items-start">
-<i class="ri-time-line text-primary mr-2 mt-1"></i>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a href="#vision" class="text-gray-300 hover:text-white transition-colors">Vision</a>
+            <a href="#tokenomics" class="text-gray-300 hover:text-white transition-colors">Tokenomics</a>
+            <a href="#utility" class="text-gray-300 hover:text-white transition-colors">Utility</a>
+            <a href="#roadmap" class="text-gray-300 hover:text-white transition-colors">Roadmap</a>
+            <a href="#whitepaper" class="text-gray-300 hover:text-white transition-colors">Whitepaper</a>
+            <a href="#faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a>
+            <a href="#social" class="text-gray-300 hover:text-white transition-colors">Community</a>
+            <a href="https://x.com/yuni_ai00?s=11" class="text-gray-300 hover:text-white transition-colors">
+              <i class="ri-twitter-fill text-2xl"></i>
+            </a>
+            <a href="https://t.me/Yuni_Ai00" class="text-gray-300 hover:text-white transition-colors">
+              <i class="ri-telegram-fill text-2xl"></i>
+            </a>
+          </div>
+          <button class="!rounded-button bg-primary px-6 py-2 text-white font-medium hover:opacity-90 transition-opacity whitespace-nowrap"><strong>AN AI MEME</strong></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="pt-20">
+    <section class="relative min-h-screen flex items-center justify-center py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center">
+          <h1 class="text-6xl font-bold mb-8 gradient-text">YUNI AI</h1>
+          <p class="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">The First AI-Powered Meme Coin Ecosystem</p>
+          <div class="flex justify-center gap-6">
+            <button class="!rounded-button bg-primary px-8 py-3 text-white font-medium hover:opacity-90 transition-opacity whitespace-nowrap buy-yuni-button" onclick="openContactModal()">Buy YUNI</button>
+            <a href="https://www.dextools.io/app/en/bnb/pair-explorer/0x49a2a51f4b6baef7d8619864018db8b2434dd351?" class="!rounded-button bg-primary px-8 py-3 text-white font-medium hover:bg-primary/10 transition-colors whitespace-nowrap">View Chart</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="vision" class="py-20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 gradient-text">Vision & Mission</h2>
+          <p class="text-xl text-gray-300">Revolutionizing meme coins with AI-driven utility</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="glass-effect p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Vision</h3>
+            <p class="text-gray-300">Revolutionize meme coins by embedding AI-driven utility into a playful, community-centric ecosystem.We aim to build a robust ecosystem
+            where users can engage, earn, and benefit from
+            advanced technology while enjoying the playful
+            spirit of meme culture.</p>
+          </div>
+          <div class="glass-effect p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Mission</h3>
+            <ul class="space-y-4 text-gray-300">
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span>Merge AI innovation with meme culture</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span>Empower holders through rewards, staking, and governance</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span>Deliver tools like market analytics, content generation, and NFTs</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span>Foster decentralized decision-making via community voting</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="tokenomics" class="py-20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 gradient-text">Tokenomics</h2>
+          <p class="text-xl text-gray-300">Total Supply: 50 Billion YUNI</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div id="tokenomicsChart" class="h-[400px]"></div>
+          <div class="space-y-6">
+            <div class="glass-effect p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-2">Community & Growth</h3>
+              <p class="text-gray-300">40% (20B tokens)</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-2">Liquidity Pools</h3>
+              <p class="text-gray-300">25% (17.5B tokens)</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-2">AI Development</h3>
+              <p class="text-gray-300">20% (10B tokens)</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-2">Marketing</h3>
+              <p class="text-gray-300">10% (5B tokens)</p>
+            </div>
+            <div class="glass-effect p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-2">Team & Advisors</h3>
+              <p class="text-gray-300">5% (2.5B tokens)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="utility" class="py-20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 gradient-text">Utility & Use Cases</h2>
+          <p class="text-xl text-gray-300">Comprehensive AI-powered ecosystem features</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="glass-effect p-8 rounded-lg transform hover:scale-105 transition-transform">
+            <div class="w-12 h-12 flex items-center justify-center mb-4">
+              <i class="ri-line-chart-line text-primary text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">AI-Powered Analytics</h3>
+            <p class="text-gray-300">Advanced market trend analysis and prediction tools</p>
+          </div>
+          <div class="glass-effect p-8 rounded-lg transform hover:scale-105 transition-transform">
+            <div class="w-12 h-12 flex items-center justify-center mb-4">
+              <i class="ri-image-line text-primary text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Meme Generator</h3>
+            <p class="text-gray-300">Create and earn rewards with AI-powered meme creation</p>
+          </div>
+          <div class="glass-effect p-8 rounded-lg transform hover:scale-105 transition-transform">
+            <div class="w-12 h-12 flex items-center justify-center mb-4">
+              <i class="ri-coins-line text-primary text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Staking Rewards</h3>
+            <p class="text-gray-300">Earn passive income through tiered staking programs</p>
+          </div>
+          <div class="glass-effect p-8 rounded-lg transform hover:scale-105 transition-transform">
+            <div class="w-12 h-12 flex items-center justify-center mb-4">
+              <i class="ri-nft-line text-primary text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">NFT Integration</h3>
+            <p class="text-gray-300">AI-generated collectibles and NFT staking platform</p>
+          </div>
+          <div class="glass-effect p-8 rounded-lg transform hover:scale-105 transition-transform">
+            <div class="w-12 h-12 flex items-center justify-center mb-4">
+              <i class="ri-exchange-line text-primary text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">Cross-Chain Swaps</h3>
+            <p class="text-gray-300">Seamless token swaps across multiple blockchains</p>
+          </div>
+          <div class="glass-effect p-8 rounded-lg transform hover:scale-105 transition-transform">
+            <div class="w-12 h-12 flex items-center justify-center mb-4">
+              <i class="ri-group-line text-primary text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">YUNI DAO</h3>
+            <p class="text-gray-300">Community governance and decision-making platform</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="roadmap" class="py-20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 gradient-text">Roadmap</h2>
+          <p class="text-xl text-gray-300">Our journey to revolutionize meme coins</p>
+        </div>
+        <div class="space-y-12">
+          <div class="glass-effect p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Phase 1 - Foundation</h3>
+            <ul class="space-y-4 text-gray-300">
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+                <span>Launch on BSC</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+                <span>Community airdrops</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+                <span>Liquidity setup</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+                <span>Social media campaigns</span>
+              </li>
+            </ul>
+          </div>
+          <div class="glass-effect p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Phase 2 - Development</h3>
+            <ul class="space-y-4 text-gray-300">
+              <li class="flex items-start">
+                <i class="ri-time-line text-primary mr-2 mt-1"></i>
+                <span>AI analytics platform launch</span>
+              </li>
+              <li class="flex items-start">
+                <iclass="ri-time-line text-primary mr-2 mt-1"></i>
 <span>Meme generator release</span>
 </li>
 <li class="flex items-start">
